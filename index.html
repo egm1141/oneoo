@@ -12,6 +12,7 @@
       height: 100vh;
       position: relative;
       overflow: hidden;
+      text-align: center;
     }
 
     .photo {
@@ -24,6 +25,7 @@
       margin: 20px auto;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(255,255,255,0.4);
+      display: none; /* ilk başta görünmez */
     }
 
     .heart {
@@ -35,18 +37,18 @@
     }
 
     .message {
-      text-align: center;
       font-size: 2rem;
       color: yellow;
       font-weight: bold;
       margin-top: 20px;
+      display: none; /* ilk başta görünmez */
     }
   </style>
 </head>
 <body>
-  <h1 style="text-align:center;">Kalp Tıklama Oyunu</h1>
-  <div class="photo"></div>
-  <div class="message" id="message"></div>
+  <h1>Kalp Tıklama Oyunu</h1>
+  <div class="photo" id="photo"></div>
+  <div class="message" id="message">bendeee</div>
 
   <script>
     let clickCount = 0;
@@ -62,9 +64,10 @@
       heart.style.top = e.pageY + "px";
       document.body.appendChild(heart);
 
-      // 10. tıklamada fotoğrafın altına mesaj göster
+      // 10. tıklamada fotoğraf ve mesajı göster
       if (clickCount === 10) {
-        document.getElementById("message").textContent = "bendeee";
+        document.getElementById("photo").style.display = "block";
+        document.getElementById("message").style.display = "block";
       }
     });
   </script>
