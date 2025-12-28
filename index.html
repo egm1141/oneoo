@@ -8,9 +8,10 @@
       background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
-      text-align: center;
       margin: 0;
-      padding: 50px;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
     }
 
     .photo {
@@ -25,34 +26,40 @@
       box-shadow: 0 0 20px rgba(255,255,255,0.4);
     }
 
-    .hearts {
-      margin-top: 20px;
+    .heart {
+      position: absolute;
       font-size: 2rem;
       color: red;
+      pointer-events: none;
     }
 
     .message {
-      margin-top: 20px;
+      text-align: center;
       font-size: 2rem;
       color: yellow;
       font-weight: bold;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Kalp Tıklama Oyunu</h1>
+  <h1 style="text-align:center;">Kalp Tıklama Oyunu</h1>
   <div class="photo"></div>
-  <div class="hearts" id="hearts"></div>
   <div class="message" id="message"></div>
 
   <script>
     let clickCount = 0;
-    document.body.addEventListener("click", () => {
+
+    document.body.addEventListener("click", (e) => {
       clickCount++;
 
-      // Her tıklamada kalp ekle
-      const heartsDiv = document.getElementById("hearts");
-      heartsDiv.innerHTML += "❤️ ";
+      // Kalp oluştur
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "❤️";
+      heart.style.left = e.pageX + "px";
+      heart.style.top = e.pageY + "px";
+      document.body.appendChild(heart);
 
       // 10. tıklamada mesaj göster
       if (clickCount === 10) {
