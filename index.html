@@ -31,6 +31,7 @@
       font-size: 2rem;
       color: red;
       pointer-events: none;
+      transform: translate(-50%, -50%);
     }
 
     .message {
@@ -53,7 +54,7 @@
     document.body.addEventListener("click", (e) => {
       clickCount++;
 
-      // Kalp oluştur
+      // Kalp oluştur ve tıklanan yere koy
       const heart = document.createElement("div");
       heart.className = "heart";
       heart.textContent = "❤️";
@@ -61,7 +62,7 @@
       heart.style.top = e.pageY + "px";
       document.body.appendChild(heart);
 
-      // 10. tıklamada mesaj göster
+      // 10. tıklamada fotoğrafın altına mesaj göster
       if (clickCount === 10) {
         document.getElementById("message").textContent = "bendeee";
       }
