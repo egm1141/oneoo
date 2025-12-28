@@ -2,31 +2,32 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Foto Sayfası</title>
+  <title>Oneoo Site</title>
   <style>
     body {
-      background-color: #f0f0f0;
+      background-color: #000;   /* siyah arka plan */
+      color: #fff;              /* yazılar beyaz olsun */
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
+      font-family: Arial, sans-serif;
     }
 
     .photo {
-      width: 200px;        /* boyutu ayarla */
-      height: 200px;
-      background-image: url("images/foto.jpg"); /* fotoğraf yolu */
-      background-size: cover;   /* kutuyu doldurur */
+      width: 250px;
+      height: 250px;
+      background-image: url("images/foto.jpg"); /* kendi fotoğrafını koy */
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      border-radius: 10px;  /* köşeleri yuvarlatmak istersen */
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
     }
   </style>
 </head>
 <body>
-  <!-- Kalp yerine artık foto -->
   <div class="photo"></div>
 </body>
 </html>
