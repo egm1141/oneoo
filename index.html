@@ -2,29 +2,63 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Oneoo Site</title>
+  <title>Kalpler ve Foto</title>
   <style>
     body {
-      background-color: #000;   /* siyah arka plan */
-      color: #fff;              /* yazılar beyaz */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-size: 4rem;
+      background-color: #000;
+      color: #fff;
       font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 50px;
+    }
+
+    .photo {
+      width: 250px;
+      height: 250px;
+      background-image: url("images/foto.jpg"); /* kendi fotoğrafını koy */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    }
+
+    .hearts {
+      margin-top: 20px;
+      font-size: 2rem;
+      color: red;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 2rem;
+      color: yellow;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div id="year">2025</div>
+  <h1>Kalp Tıklama Oyunu</h1>
+  <div class="photo"></div>
+  <div class="hearts" id="hearts"></div>
+  <div class="message" id="message"></div>
 
   <script>
-    // 2 saniye sonra 2026’ya dönüşsün
-    setTimeout(() => {
-      document.getElementById("year").textContent = "2026";
-    }, 2000);
+    let clickCount = 0;
+    document.body.addEventListener("click", () => {
+      clickCount++;
+
+      // Her tıklamada kalp ekle
+      const heartsDiv = document.getElementById("hearts");
+      heartsDiv.innerHTML += "❤️ ";
+
+      // 10. tıklamada mesaj göster
+      if (clickCount === 10) {
+        document.getElementById("message").textContent = "bendeee";
+      }
+    });
   </script>
 </body>
 </html>
