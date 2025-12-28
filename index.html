@@ -17,15 +17,11 @@
 
     .photo {
       width: 250px;
-      height: 250px;
-      background-image: url("images/foto.jpg"); /* kendi fotoğrafını koy */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      height: auto;
       margin: 20px auto;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(255,255,255,0.4);
-      display: none; /* ilk başta görünmez */
+      display: none; /* ilk başta görünmesin */
     }
 
     .heart {
@@ -41,13 +37,13 @@
       color: yellow;
       font-weight: bold;
       margin-top: 20px;
-      display: none; /* ilk başta görünmez */
+      display: none;
     }
   </style>
 </head>
 <body>
   <h1>Kalp Tıklama Oyunu</h1>
-  <div class="photo" id="photo"></div>
+  <img src="foto.jpg" id="photo" class="photo" alt="Fotoğraf">
   <div class="message" id="message">bendeee</div>
 
   <script>
