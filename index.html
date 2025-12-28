@@ -6,28 +6,25 @@
   <style>
     body {
       background-color: #000;   /* siyah arka plan */
-      color: #fff;              /* yazılar beyaz olsun */
+      color: #fff;              /* yazılar beyaz */
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
+      font-size: 4rem;
       font-family: Arial, sans-serif;
-    }
-
-    .photo {
-      width: 250px;
-      height: 250px;
-      background-image: url("images/foto.jpg"); /* kendi fotoğrafını koy */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
     }
   </style>
 </head>
 <body>
-  <div class="photo"></div>
+  <div id="year">2025</div>
+
+  <script>
+    // 2 saniye sonra 2026’ya dönüşsün
+    setTimeout(() => {
+      document.getElementById("year").textContent = "2026";
+    }, 2000);
+  </script>
 </body>
 </html>
